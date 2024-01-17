@@ -1,0 +1,17 @@
+work_year,job_title,job_category,salary_currency,salary,salary_in_usd,employee_residence,experience_level,employment_type,work_setting,company_location,company_size
+2023,Data DevOps Engineer,Data Engineering,EUR,88000,95012,Germany,Mid-level,Full-time,Hybrid,Germany,L
+2023,Data Architect,Data Architecture and Modeling,USD,186000,186000,United States,Senior,Full-time,In-person,United States,M
+2023,Data Architect,Data Architecture and Modeling,USD,81800,81800,United States,Senior,Full-time,In-person,United States,M
+2023,Data Scientist,Data Science and Research,USD,212000,212000,United States,Senior,Full-time,In-person,United States,M
+2023,Data Scientist,Data Science and Research,USD,93300,93300,United States,Senior,Full-time,In-person,United States,M
+2023,Data Scientist,Data Science and Research,USD,130000,130000,United States,Senior,Full-time,Remote,United States,M
+2023,Data Scientist,Data Science and Research,USD,100000,100000,United States,Senior,Full-time,Remote,United States,M
+2023,Machine Learning Researcher,Machine Learning and AI,USD,224400,224400,United States,Mid-level,Full-time,In-person,United States,M
+2023,Machine Learning Researcher,Machine Learning and AI,USD,138700,138700,United States,Mid-level,Full-time,In-person,United States,M
+2023,Data Engineer,Data Engineering,USD,210000,210000,United States,Executive,Full-time,Remote,United States,M
+2023,Data Engineer,Data Engineering,USD,168000,168000,United States,Executive,Full-time,Remote,United States,M
+2023,Machine Learning Engineer,Machine Learning and AI,USD,224400,224400,United States,Senior,Full-time,In-person,United States,M
+2023,Machine Learning Engineer,Machine Learning and AI,USD,138700,138700,United States,Senior,Full-time,In-person,United States,M
+2023,Data Scientist,Data Science and Research,GBP,35000,43064,United Kingdom,Mid-level,Full-time,In-person,United Kingdom,M
+2023,Data Scientist,Data Science and Research,GBP,30000,36912,United Kingdom,Mid-level,Full-time,In-person,United Kingdom,M
+2023,Data Analyst,Data Analysis,USD,95000,95000,United States,Entry-level,Full-time,In-person,United States,M

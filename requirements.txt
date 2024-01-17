@@ -1,0 +1,8 @@
+azureml
+azureml.core
+joblib
+scikit-learn
+argparse
+numpy 
+pandas
+azureml-dataset-runtime

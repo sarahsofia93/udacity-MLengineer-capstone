@@ -13,8 +13,8 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 
 def clean_data(data):
 
-    #x_df = data.to_pandas_dataframe().dropna()
-    x_df = data.copy()
+    x_df = data.to_pandas_dataframe().dropna()
+    #x_df = data.copy()
 
     # Drop rows with missing values
     x_df = x_df.dropna()
@@ -51,15 +51,15 @@ def main():
 
     args = parser.parse_args()
 
-    #run = Run.get_context()
-    #run.log("Max iterations:", np.int(args.max_iter))
+    run = Run.get_context()
+    run.log("Max iterations:", np.int(args.max_iter))
 
 
 
 
-    #url = "https://github.com/sarahsofia93/udacity-MLengineer-capstone/blob/master/jobs_in_data.csv"
+    url = "https://github.com/sarahsofia93/udacity-MLengineer-capstone/blob/master/jobs_in_data.csv"
 
-    #ds = TabularDatasetFactory.from_delimited_files(path=url)
+    ds = TabularDatasetFactory.from_delimited_files(path=url)
 
     ds = pd.read_csv("jobs_in_data.csv", header=0, delimiter=",")
 
@@ -68,7 +68,7 @@ def main():
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
     model = LogisticRegression(C = args.C, max_iter=args.max_iter).fit(x_train, y_train)
     accuracy = model.score(x_test, y_test)
-    #run.log("Accuracy", np.float(accuracy))
+    run.log("Accuracy", np.float(accuracy))
 
 
 

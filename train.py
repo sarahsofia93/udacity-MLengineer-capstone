@@ -13,8 +13,8 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 
 def clean_data(data):
 
-    x_df = data.to_pandas_dataframe().dropna()
-    #x_df = data.copy()
+    #x_df = data.to_pandas_dataframe().dropna()
+    x_df = data.copy()
 
     # Drop rows with missing values
     x_df = x_df.dropna()
@@ -24,7 +24,7 @@ def clean_data(data):
     one_hot_columns = ["job_title", "job_category", "employee_residence", "company_location", "company_size", "experience_level", "employment_type", "work_setting"]
     one_hot_encoder = OneHotEncoder(sparse=False)
     one_hot_encoded = one_hot_encoder.fit_transform(x_df[one_hot_columns])
-    one_hot_encoded_df = pd.DataFrame(one_hot_encoded, columns=one_hot_encoder.get_feature_names_out(one_hot_columns))
+    one_hot_encoded_df = pd.DataFrame(one_hot_encoded, columns=one_hot_encoder.get_feature_names(one_hot_columns))
     x_df = x_df.drop(one_hot_columns, axis=1)
     x_df = pd.concat([x_df, one_hot_encoded_df], axis=1)
 
@@ -57,16 +57,18 @@ def main():
 
 
 
-    url = "https://github.com/sarahsofia93/udacity-MLengineer-capstone/blob/master/jobs_in_data.csv"
+    #url = "https://github.com/sarahsofia93/udacity-MLengineer-capstone/blob/master/jobs_in_data.csv"
 
-    ds = TabularDatasetFactory.from_delimited_files(path=url)
+    #ds = TabularDatasetFactory.from_delimited_files(path=url)
 
-    ds = pd.read_csv("jobs_in_data.csv", header=0, delimiter=",")
+    ds = pd.read_csv("./jobs_in_data.csv", header=0, delimiter=",")
 
     x, y = clean_data(ds)
 
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
     model = LogisticRegression(C = args.C, max_iter=args.max_iter).fit(x_train, y_train)
+    joblib.dump(model, 'model.joblib')
+    
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
 

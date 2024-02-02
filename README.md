@@ -62,10 +62,23 @@ Here you can see the succesful deployment of the best performing AutoML model, w
 
 ![Deploy2](./images/Webservice_Deployment_2_delete.png)
 
-In the last screenshot, you can see the successfull request response of the API call:
+In the last screenshot, you can see the code for sending an inference request being sent to the deployed model. The sample data can be seen in the screenshot above (cell 17).
+
+!!! Please check the Notebook "automl_executed.ipynb" for the executed Notebook showing the successful inference request !!!
 
 
 ![Deploy3](./images/WebserviceDeployment3.png)
+
+
+## Improvements in the future
+
+There are several steps that could be taken to improve the output of my experiment in the future. While the results of the AutoML experiment are better than the Hyperdrive run, the metric overall doesn't look to good. My assumption is that the dataset and the input data is not sufficiently good to predict the target variable. Several steps can be taken to improve the model:
+
+- Put further time and energy into preprocessing the input data and into enriching the input data with additional information. There might be a lot of potential to be gained from experiment with different transformation, additional data, etc.
+- In line with the first comment, domain knowledge can be used to improve input data, but also to select models and methods for the regression task
+- I could use GPU instead of CPU for faster computation that would allow us to test more models in the same time
+- Try other models, for example a classification instead of a regression. Classification approaches like XGBoost have also shown good results on regression tasks. To prepare the data for this, one could preprocess the target variable into bins, that is, make it into a categorical variable instead of a continuous one. 
+- Another possible approach would be using deep learning, i.e., neural networks with several layers, for this task. This does not necessarily lead to improvements since NNs are not always better than traditional approaches, but it is worth a try nevertheless. Using a NN would allow us to try out a more powerful approach that maps input-output relations that cannot be grasped by traditional classification methods.
 
 
 ## Screen Recording

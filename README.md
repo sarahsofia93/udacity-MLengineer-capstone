@@ -62,7 +62,9 @@ Here you can see the succesful deployment of the best performing AutoML model, w
 
 ![Deploy2](./images/Webservice_Deployment_2_delete.png)
 
-In the last screenshot, you can see the code for sending an inference request being sent to the deployed model. The sample data can be seen in the screenshot above (cell 17).
+## Inference Request
+
+In the following screenshot, you can see the code for sending an inference request being sent to the deployed model. The sample data can be seen in the screenshot above (Section Model Deployment cell 17).
 
 !!! Please check the Notebook "automl_executed.ipynb" for the executed Notebook showing the successful inference request !!!
 
